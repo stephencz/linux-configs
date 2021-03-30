@@ -1,5 +1,5 @@
 [network]
-command=iwgetid --raw
+command=sh custom-network.sh
 interval=1
 
 [disk]
