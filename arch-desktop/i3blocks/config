@@ -2,9 +2,9 @@
 command=sh custom-network.sh
 interval=1
 
-[disk]
-command=sh custom-disk.sh
-interval=30
+[monitor]
+command=python3 custom-monitor.py
+interval=60
 
 [weather]
 command=python3 get-weather.py
