@@ -1,0 +1,19 @@
+[network]
+command=iwgetid --raw
+interval=1
+
+[disk]
+command=sh custom-disk.sh
+interval=30
+
+[weather]
+command=python3 get-weather.py
+interval=900
+
+[date]
+command=sh custom-date.sh
+interval=1
+
+[time]
+command=sh custom-time.sh
+interval=1
