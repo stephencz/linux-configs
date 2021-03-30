@@ -2,3 +2,5 @@ colors:
   primary:
     background: '#1b202a'
 
+font:
+  size: 10
