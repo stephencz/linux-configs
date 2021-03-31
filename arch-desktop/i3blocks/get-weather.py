@@ -32,7 +32,7 @@ def get_wind(weather):
 
 def run():
     # Get weather data for Vineland, NJ
-    owm = OWM('d1275943b595a4bf513b71ae9573036b')
+    owm = OWM('')
     mgr = owm.weather_manager()
 
     observation = mgr.weather_at_place('Vineland, US')
