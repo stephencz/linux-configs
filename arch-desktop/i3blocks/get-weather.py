@@ -6,14 +6,14 @@ def get_weather_icon(weather):
     output = ""
 
     status = str(weather.status).lower()
+    if(weather.clouds <= 25):
+        output = ''
+
     if(weather.clouds <= 60 and weather.clouds > 25):
         output = ''
 
-    if(weather.clouds > 60):
+    if(weather.clouds > 60 or status == 'clouds'):
         output = ''
-
-    else:
-        output = ''
 
     if('rain' in status or 'rainy' in status or 'raining' in status):
         output = ''
@@ -32,7 +32,7 @@ def get_wind(weather):
 
 def run():
     # Get weather data for Vineland, NJ
-    owm = OWM('')
+    owm = OWM('API')
     mgr = owm.weather_manager()
 
     observation = mgr.weather_at_place('Vineland, US')
@@ -46,6 +46,14 @@ def run():
 
     print(output) # Full
     print(output) # Short
+
+    with open('weather_output.txt', 'w') as file:
+        file.write('Status: ' + str(w.status) + '\n')
+        file.write('Temperature: ' + str(w.temperature('fahrenheit')) + '\n')
+        file.write('Wind: ' + str(w.wind()) + '\n')
+        file.write('Clouds: ' + str(w.clouds) + '\n')
+        file.write('Rain: ' + str(w.rain) + '\n')
+        file.write('Precipitation: ' + str(w.precipitation_probability) + '\n')
 
 if __name__ == '__main__':
     run()
