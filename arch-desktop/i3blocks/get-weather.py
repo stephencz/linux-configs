@@ -6,15 +6,14 @@ def get_weather_icon(weather):
     output = ""
 
     status = str(weather.status).lower()
-    if(weather.clouds < 60 and weather.clouds > 20):
+    if(weather.clouds <= 60 and weather.clouds > 25):
         output = ''
 
     if(weather.clouds > 60):
         output = ''
 
     else:
-        if('clear' in status or 'sunny' in status):
-            output = ''
+        output = ''
 
     if('rain' in status or 'rainy' in status or 'raining' in status):
         output = ''
@@ -33,7 +32,7 @@ def get_wind(weather):
 
 def run():
     # Get weather data for Vineland, NJ
-    owm = OWM('API_KEY')
+    owm = OWM('d1275943b595a4bf513b71ae9573036b')
     mgr = owm.weather_manager()
 
     observation = mgr.weather_at_place('Vineland, US')
