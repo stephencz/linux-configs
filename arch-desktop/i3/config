@@ -116,6 +116,10 @@ bindsym $mod+a focus parent
 bindsym $mod+Shift+n exec redshift -x
 bindsym $mod+Shift+m exec redshift -P -O 3000
 
+# Switch to next and previous workspaces
+bindsym $mod+n workspace prev
+bindsym $mod+m workspace next
+
 # focus the child container
 #bindsym $mod+d focus child
 
