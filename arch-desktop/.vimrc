@@ -25,8 +25,12 @@ if exists('+termguicolors')
     set termguicolors
 endif
 
+" Set theme
 set background=dark
 colorscheme deep-space
+
+" Disable youcompleteme preview
+set completeopt-=preview
 
 " Disable line wrapping
 set nowrap
